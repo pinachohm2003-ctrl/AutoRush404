@@ -1,5 +1,6 @@
 """
-Punto de entrada. Ejecuta el pipeline completo para UN short de psicologia:
+Punto de entrada. Ejecuta el pipeline completo para UN short de historia
+de automocion:
 1. Genera tema, guion, titulo y hashtags (Gemini)
 2. Descarga clip de video libre de derechos (Pexels)
 3. Genera la voz narrada
