@@ -1,0 +1,69 @@
+name: Publicar short
+
+on:
+  schedule:
+    - cron: "30 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "30 19 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
+
+      - name: Permitir a ImageMagick generar texto (política de seguridad por defecto lo bloquea)
+        run: |
+          sudo sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/' /etc/ImageMagick-6/policy.xml || true
+          sudo sed -i '/pattern="TEXT"/d' /etc/ImageMagick-6/policy.xml || true
+
+      - name: Instalar dependencias Python
+        run: pip install -r requirements.txt
+
+      - name: Caché del modelo de voz (Piper)
+        uses: actions/cache@v4
+        with:
+          path: voices
+          key: piper-voice-en_US-lessac-medium-v1
+
+      - name: Descargar el modelo de voz si no está en caché
+        run: |
+          mkdir -p voices
+          if [ ! -f voices/en_US-lessac-medium.onnx ]; then
+            curl -L -o voices/en_US-lessac-medium.onnx "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx"
+            curl -L -o voices/en_US-lessac-medium.onnx.json "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx.json"
+          fi
+
+      - name: Generar y publicar el short
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python main.py
+
+      - name: Guardar el histórico de temas usados
+        if: always()
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "actions@github.com"
+          git add topics_used.json
+          git diff --staged --quiet || git commit -m "Actualizar temas usados [skip ci]"
+          git push
