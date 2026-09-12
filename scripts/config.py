@@ -1,7 +1,7 @@
 """
-Configuración central del bot.
+Configuracion central del bot.
 Todas las claves se leen de variables de entorno (nunca hardcodeadas),
-que en producción vienen de los Secrets de GitHub Actions.
+que en produccion vienen de los Secrets de GitHub Actions.
 """
 import os
 
@@ -18,17 +18,16 @@ YT_REFRESH_TOKEN = os.environ["YT_REFRESH_TOKEN"].strip()
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"].strip()
 TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"].strip()
 
-# --- Parámetros del vídeo ---
+# --- Parametros del video ---
 VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 TARGET_DURATION = 30  # segundos aprox. de cada short
-MUSIC_VOLUME = 0.12  # volumen relativo de la música de fondo frente a la voz
+MUSIC_VOLUME = 0.12  # volumen relativo de la musica de fondo frente a la voz
 
 # --- Voz (Piper, motor local, sin llamadas a servidores externos) ---
 PIPER_VOICE_NAME = "en_US-lessac-medium"
 
 # --- Rutas ---
-# Correcto para tu estructura real (config.py está en scripts/):
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 MUSIC_DIR = os.path.join(ASSETS_DIR, "music")
