@@ -568,5 +568,10 @@
     "topic": "Honda CVCC Chevy Impala",
     "script": "General Motors publicly claimed Honda’s revolutionary engine technology was just a toy that would fail on a real car. In 1973, GM’s CEO boasted that Honda’s CVCC design only worked on tiny Japanese vehicles. Soichiro Honda didn’t argue. Instead, he secretly bought a giant V8 Chevrolet Impala, flew it to Japan, and fitted GM’s own engine with custom CVCC cylinder heads. Sent back for official EPA testing, the Impala passed strict US emissions without a catalytic converter while getting better gas mileage. GM was silenced by their own car.",
     "date": "2026-11-08T17:46:07.147879"
+  },
+  {
+    "topic": "Chaparral 2E Movable Wing",
+    "script": "Race drivers in 1966 were baffled by a third pedal inside a car with an automatic transmission. Texas engineer Jim Hall built the Chaparral 2E using a two-speed automatic gearbox, leaving the driver’s left foot completely idle. Instead of resting it, Hall connected that left pedal directly to a massive, elevated rear wing. Stomping the pedal flattened the wing on straights for maximum speed. Releasing it slammed downforce back into corners. He had invented active aerodynamics—all because his left foot was bored.",
+    "date": "2026-11-08T23:00:32.228214"
   }
 ]
