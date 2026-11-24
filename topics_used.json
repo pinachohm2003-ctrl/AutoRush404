@@ -758,5 +758,10 @@
     "topic": "Jaguar E-Type Geneva Sprint",
     "script": "A single phone call in 1961 forced one driver to race seven hundred miles through pitch darkness without sleep. Jaguar had just unveiled the E-Type in Geneva, but demand for test drives exploded. Founder Sir William Lyons called chief test driver Norman Dewis in England with an insane order: deliver a second car to Switzerland in under thirteen hours. Dewis floored prototype 9600 HP across France, averaging over eighty miles per hour on public roads. He arrived with twenty minutes to spare, instantly creating history.",
     "date": "2026-11-24T18:04:21.738237"
+  },
+  {
+    "topic": "1962 Oldsmobile Jetfire Turbo",
+    "script": "In 1962, General Motors built a car that disabled itself if you forgot a bottle in your glovebox. The Oldsmobile Jetfire was the world's first turbocharged passenger car. But engineer Gilbert Burrell faced a deadly problem: high compression meant turbo boost would instantly destroy the V8 engine. His fix? Automatically injecting a mixture of water and methanol called Turbo-Rocket Fluid. When the fluid ran dry, a hidden mechanical valve tripped, shutting down the turbo completely. Drivers kept forgetting to refill it, forcing GM to remove the turbos for free.",
+    "date": "2026-11-24T22:04:42.245260"
   }
 ]
