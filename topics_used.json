@@ -763,5 +763,10 @@
     "topic": "1962 Oldsmobile Jetfire Turbo",
     "script": "In 1962, General Motors built a car that disabled itself if you forgot a bottle in your glovebox. The Oldsmobile Jetfire was the world's first turbocharged passenger car. But engineer Gilbert Burrell faced a deadly problem: high compression meant turbo boost would instantly destroy the V8 engine. His fix? Automatically injecting a mixture of water and methanol called Turbo-Rocket Fluid. When the fluid ran dry, a hidden mechanical valve tripped, shutting down the turbo completely. Drivers kept forgetting to refill it, forcing GM to remove the turbos for free.",
     "date": "2026-11-24T22:04:42.245260"
+  },
+  {
+    "topic": "Chrysler Airflow Aerodynamics",
+    "script": "In 1930, engineers put a standard production car in a wind tunnel and discovered something humiliating. Chrysler wanted to know why cars burned so much fuel at highway speeds. Lead engineer Carl Breer even brought in aviation pioneer Orville Wright to test their sedans. The drag numbers were terrible. But when they turned the car completely around, the air flowed significantly smoother. The car was actually more aerodynamic driving in reverse. That embarrassing test forced Chrysler to rebuild from scratch, creating the streamlined 1934 Airflow. Makes you wonder what else we are driving backward today.",
+    "date": "2026-11-25T03:07:43.002844"
   }
 ]
